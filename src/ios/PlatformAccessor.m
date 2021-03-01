@@ -3,7 +3,7 @@
 #import "PlatformAccessor.h"
 
 
-@interface PlatformAccessor
+@interface PlatformAccessor()
 
 - (NSString*)_getLang;
 
@@ -13,18 +13,18 @@
 @implementation PlatformAccessor
 
 - (void)getLang:(CDVInvokedUrlCommand*)command
-{   
-	//NSString* arg0 = [command.arguments objectAtIndex:0];
+{
+  //NSString* arg0 = [command.arguments objectAtIndex:0];
     
-    NSString* result = [self._getLang];
-	
+    NSString* result = [self _getLang];
+  
     CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)getUid:(CDVInvokedUrlCommand*)command
-{   
+{
     NSString* result = [[UIDevice currentDevice] identifierForVendor].UUIDString;
 
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
@@ -33,38 +33,38 @@
 }
 
 - (void)getPlatformData:(CDVInvokedUrlCommand*)command
-{   
-	//NSString* arg0 = [command.arguments objectAtIndex:0];
+{
+  //NSString* arg0 = [command.arguments objectAtIndex:0];
 
     NSDictionary *result = @{
-        @"lang"				: [self._getLang],
-        @"platformName"		: @"io",
-        @"platformCode"		: @"9"
+        @"lang"        : [self _getLang],
+        @"platformName"    : @"io",
+        @"platformCode"    : @"9"
     };
-	
-    CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:result];
+  
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:result];
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)minimize:(CDVInvokedUrlCommand*)command
-{   
-	//NSString* arg0 = [command.arguments objectAtIndex:0];
+{
+    //NSString* arg0 = [command.arguments objectAtIndex:0];
+    
+    // Apple does not implement this feature
 }
 
 - (void)initWebView:(CDVInvokedUrlCommand*)command
-{   
-	//NSString* arg0 = [command.arguments objectAtIndex:0];
+{
+  //NSString* arg0 = [command.arguments objectAtIndex:0];
 
     NSString* result = @"OK";
     
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     
-    return;
-    
-	/* Try cookies
+  /* Try cookies
     NSLog(@"----> Cookies start");
     
     NSMutableDictionary* cookieProperties = [NSMutableDictionary dictionary];
@@ -110,18 +110,18 @@
             result = @"WKWebView requires iOS 11+ in order to set the cookie";
         }
     } else {
-        NSLog(@"----> is not WKWebView");
-    }
-    
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
-    
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-	*/
+    NSLog(@"----> is not WKWebView");
+   }
+   
+   pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+   
+   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+ */
 }
 
 - (NSString*)_getLang
-{   
-	return [[[NSLocale preferredLanguages] firstObject] substringToIndex:2];
+{
+    return [[[NSLocale preferredLanguages] firstObject] substringToIndex:2];
 }
 
 @end
