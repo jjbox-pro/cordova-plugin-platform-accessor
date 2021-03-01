@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-platform-accessor",
+  "version": "1.0.0",
+  "description": "The plugin represent a simple access to a platform api",
+  "cordova": {
+    "id": "cordova-plugin-platform-accessor",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Mokogon Denis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jjbox-pro/cordova-platform-accessor.git"
+  }
+}
