@@ -1,4 +1,4 @@
-package cordova.plugin.platform.accessor.PlatformAccessor;
+package cordova.plugin.platform.accessor;
 
 import java.util.Locale; // Для получения языка устройства
 import android.provider.Settings.Secure; // Для получения id устройства
