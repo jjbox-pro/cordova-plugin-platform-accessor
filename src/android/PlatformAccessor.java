@@ -139,9 +139,12 @@ public class PlatformAccessor extends CordovaPlugin {
 				public void run() {
 					WebView webView = (WebView)cordovaWebView.getView();
 					
+					webView.setBackgroundColor(Color.BLACK);
+					
+					
 					WebSettings settings = webView.getSettings();
 					
-					settings.setTextZoom(100) ;
+					settings.setTextZoom(100);
 					
 					callbackContext.success("");
 				}
