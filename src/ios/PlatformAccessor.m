@@ -38,7 +38,8 @@
 
     NSDictionary *result = @{
         @"lang"        : [self _getLang],
-        @"platformName"    : @"io",
+        @"platformName"    : @"ios",
+		@"platformSuffix"    : @"io",
         @"platformCode"    : @"9"
     };
   

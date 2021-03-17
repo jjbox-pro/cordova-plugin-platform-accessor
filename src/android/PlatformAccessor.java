@@ -1,3 +1,5 @@
+package cordova.plugin.platform.accessor.PlatformAccessor;
+
 import java.util.Locale; // Для получения языка устройства
 import android.provider.Settings.Secure; // Для получения id устройства
 // Для получения серийного номера устройства
@@ -114,7 +116,8 @@ public class PlatformAccessor extends CordovaPlugin {
         
         try{
             result.put("lang", this._getLang());
-            result.put("platformName", "an");
+			result.put("platformName", "android");
+            result.put("platformSuffix", "an");
             result.put("platformCode", "8");
 
             callbackContext.success(result);
