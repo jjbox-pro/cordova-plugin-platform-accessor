@@ -17,10 +17,11 @@
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="PlatformAccessor">
                 <param name="android-package" value="cordova.plugin.platform.accessor.PlatformAccessor" />
+				<param name="onload" value="true"/>
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
-        <source-file src="src/android/PlatformAccessor.java" target-dir="src/cordova/plugin/platform/accessor/PlatformAccessor" />
+        <source-file src="src/android/PlatformAccessor.java" target-dir="src/cordova/plugin/platform/accessor" />
     </platform>
     
 	<platform name="ios">
