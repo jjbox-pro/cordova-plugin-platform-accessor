@@ -10,6 +10,8 @@ import java.lang.reflect.Method;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
 
+import android.graphics.Color;
+
 import org.apache.cordova.*;
 
 import org.json.JSONArray;
