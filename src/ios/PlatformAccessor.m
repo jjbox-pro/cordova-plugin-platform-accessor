@@ -64,9 +64,9 @@
 	if ([self.webView isKindOfClass:[WKWebView class]]) {
         WKWebView* wkWebView = (WKWebView*) self.webView;
         
-        wkWebView.scrollView.bounces = NO;
-        wkWebView.scrollView.alwaysBounceHorizontal = NO;
-        wkWebView.scrollView.alwaysBounceVertical = NO;
+        //wkWebView.scrollView.bounces = NO;
+        //wkWebView.scrollView.alwaysBounceHorizontal = NO;
+        //wkWebView.scrollView.alwaysBounceVertical = NO;
     }
 	
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
