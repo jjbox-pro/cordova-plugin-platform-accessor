@@ -17,7 +17,7 @@ PlatformAccessor.prototype.minimize = function () {
 };
 
 PlatformAccessor.prototype.initWebView = function (successCallback, errorCallback, options) {
-	cordova.exec(successCallback, errorCallback, "PlatformAccessor", "initWebView", [options]);
+	cordova.exec(successCallback, errorCallback||successCallback, "PlatformAccessor", "initWebView", [options]);
 };
 
 PlatformAccessor.install = function () {
