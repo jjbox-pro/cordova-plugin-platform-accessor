@@ -61,6 +61,14 @@
 
     NSString* result = @"OK";
     
+	if ([self.webView isKindOfClass:[WKWebView class]]) {
+        WKWebView* wkWebView = (WKWebView*) self.webView;
+        
+        wkWebView.scrollView.bounces = NO;
+        wkWebView.scrollView.alwaysBounceHorizontal = NO;
+        wkWebView.scrollView.alwaysBounceVertical = NO;
+    }
+	
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
     
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
