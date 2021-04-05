@@ -139,6 +139,9 @@ public class PlatformAccessor extends CordovaPlugin {
 			mainHandler.post(new Runnable() { // Необходимо работать с webView в отдельном "потоке".
 				@Override
 				public void run() {
+					cordova.getActivity().getWindow().addFlags(FLAG_KEEP_SCREEN_ON);
+					
+					
 					WebView webView = (WebView)cordovaWebView.getView();
 					
 					webView.setBackgroundColor(Color.BLACK);
